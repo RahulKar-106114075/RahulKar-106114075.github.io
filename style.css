@@ -187,3 +187,17 @@ background-color:#000000;
 position:absolute;
 top:462px;
 left:236px;}
+#inputbox{
+	margin-top: 10px;
+	margin-left: 15px;
+	text-align: center;
+	font-size: 30px; 
+	width: 220px;
+	height: 80px;
+}
+
+#display{
+	background-color: rgb(195,195,195);
+	width: 250px;
+	height: 100px;
+}
