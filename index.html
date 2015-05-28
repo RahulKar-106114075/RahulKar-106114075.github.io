@@ -11,7 +11,7 @@
 <script type="text/javascript">
 
 
-function re_inni(){
+function clear(){
 	
 document.getElementById("inputbox").value='';
 }
@@ -48,63 +48,63 @@ document.getElementById("inputbox").value=eval(temp);
 </div>
 
 <div class="display">
-<input type="text" readonly size="18" id="d">
+<input type="text" place="" id="inputbox" value="">
 </div>
 
 <div id="keys">
 
-<input type="button" class="btn13" value="DEL" onclick='presskey()'>
+<input type="button" class="btn13" value="DEL" onclick="presskey()">
 
-<input type="button" class="btn14" value="/" onclick='presskey("/")'>
+<input type="button" class="btn14" value="/" onclick="presskey('/')">
 
-<input type="button" class="btn15" value="*" onclick='presskey("*")'>
+<input type="button" class="btn15" value="*" onclick="presskey('*')">
 
-<input type="button" class="btn16" value="-" onclick='presskey("-")'>
+<input type="button" class="btn16" value="-" onclick="presskey('-')">
 
-<input type="button" class="btn17" value="+" onclick='presskey("+")'>
+<input type="button" class="btn17" value="+" onclick="presskey('+')">
 
-<input type="button" class="btn18" value="AC" onclick='re_inni()'>
+<input type="button" class="btn18" value="AC" onclick="clear()">
 
 <p>
 
-<input type="button" class="btn7" value="7" onclick='presskey("7")'>
+<input type="button" class="btn7" value="7" onclick="presskey('7')">
 
-<input type="button" class="btn8" value="8" onclick='presskey("8")'>
+<input type="button" class="btn8" value="8" onclick="presskey('8')">
 
-<input type="button" class="btn9" value="9" onclick='presskey("9")'>
+<input type="button" class="btn9" value="9" onclick="presskey('9')">
 
 
 </p>
 
 <p>
 
-<input type="button" class="btn4" value="4" onclick='presskey("4")'>
+<input type="button" class="btn4" value="4" onclick="presskey('4')">
 
-<input type="button" class="btn5" value="5" onclick='presskey("5")'>
+<input type="button" class="btn5" value="5" onclick="presskey('5')">
 
-<input type="button" class="btn6" value="6" onclick='presskey("6")'>
-
-
-</p>
-
-<p>
-
-<input type="button" class="btn1" value="1" onclick='presskey("1")'>
-
-<input type="button" class="btn2" value="2" onclick='presskey("2")'>
-
-<input type="button" class="btn3" value="3" onclick='presskey("3")'>
+<input type="button" class="btn6" value="6" onclick="presskey('6')">
 
 
 </p>
 
 <p>
 
-<input type="button" class="btn10" value="." onclick='presskey(".")'>
+<input type="button" class="btn1" value="1" onclick="presskey('1')">
 
-<input type="button" class="btn0" value="0" onclick='presskey("0")'>
+<input type="button" class="btn2" value="2" onclick="presskey('2')">
 
-<input type="button" class="btn11" value="=" onclick='evaluate_exp()'>
+<input type="button" class="btn3" value="3" onclick="presskey('3')">
+
+
+</p>
+
+<p>
+
+<input type="button" class="btn10" value="." onclick="presskey('.')">
+
+<input type="button" class="btn0" value="0" onclick="presskey('0')">
+
+<input type="button" class="btn11" value="=" onclick="evaluate_exp()">
 
 
 </p>
