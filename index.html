@@ -5,7 +5,7 @@
 
 </head>
 <body>
-<div id = "calc">
+<div id = "calculator">
 <div id = "top"></div>
 <div id = "display">
 <input type = "text" id = "disp" style = "height:120px; width:350px;" readonly size = "17">
@@ -44,8 +44,8 @@
 	<br>
 	<input type = "button" class = "operation" value = " + " onclick = 'presskey("+")'>
 	<br>
-        <input type="button" class="operation" value="C" onclick = 'presskey("C")'>
-        <br>
+        
+        
 </p>
 </div>
 <div id = "slide">
@@ -75,8 +75,7 @@ function presskey(val)
 i("disp").value+=val;
 if(val=='/' || val=='*' || val=='+' || val=='-' )
 ct++;
-else if(val=='C')
-ct = ct.substr(0 , ct.length-1)
+
 else if(ct!=0)
 show(eval(i("disp").value));
 }
