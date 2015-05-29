@@ -1,117 +1,85 @@
 <html>
-
 <head>
-
 <title>HTML Calculator</title>
-
-
 <link rel="stylesheet" href="style.css" />
 
-
-<script type="text/javascript">
-
-
-function clear(){
-	
-document.getElementById("inputbox").value='';
-}
-
-
-function presskey(n){
-	
-document.getElementById("inputbox").value+=n;
-}
-
-
-
-function evaluate_exp(){
-	
-var temp = document.getElementById("inputbox").value; 
-	
-document.getElementById("inputbox").value=eval(temp);	
-
-}
-
-
-</script>
-
-
 </head>
-
-
 <body>
-
-<div id="calculator">
-
-<div id="total">
-
+<div id = "calc">
+<div id = "top"></div>
+<div id = "display">
+<input type = "text" id = "disp" style = "height:120px; width:350px;" readonly size = "17">
+</div>
+<div id = "answer">
+<input type = "text" style = "height:80px; width:350px; " id = "ans" readonly size = "17" >
+</div>
+<div id = "numbers">
+<p>
+	<input type = "button" class = "number" value = "7" onclick = 'presskey("7")'>
+	<input type = "button" class = "number" value = "8" onclick = 'presskey("8")'>
+	<input type = "button" class = "number" value = "9" onclick = 'presskey("9")'>
+<br>
+	<input type = "button" class = "number" value = "4" onclick = 'presskey("4")'>
+	<input type = "button" class = "number" value = "5" onclick = 'presskey("5")'>
+	<input type = "button" class = "number" value = "6" onclick = 'presskey("6")'>
+<br>
+	<input type = "button" class = "number" value = "1" onclick = 'presskey("1")'>
+	<input type = "button" class = "number" value = "2" onclick = 'presskey("2")'>
+	<input type = "button" class = "number" value = "3" onclick = 'presskey("3")'>
+<br>
+	<input type = "button" class = "number" value = "." onclick = 'presskey(".")'>
+	<input type = "button" class = "number" value = "0" onclick = 'presskey("0")'>
+	<input type = "button" class = "number" value = "=" onclick = 'evaluate_exp()'>
+</p>
+</div>
+<div id = "operations">
+<p>
+	<input type = "button" class = "operation" value = " AC " onclick = location.reload()>
+	<br>
+	<input type = "button" class = "operation" value = " / " onclick = 'presskey("/")'>
+	<br>
+	<input type = "button" class = "operation" value = " x " onclick = 'presskey("*")'>
+	<br>
+	<input type = "button" class = "operation" value = " - " onclick = 'presskey("-")'>
+	<br>
+	<input type = "button" class = "operation" value = " + " onclick = 'presskey("+")'>
+	<br>
+        <input type="button" class="operation" value="C" onclick = 'presskey("C")'>
+        <br>
+</p>
+</div>
+<div id = "slide">
+</div>
+<div id = "bottom">
 </div>
 
-<div class="display">
-<input type="text" place="" id="inputbox" value="">
 </div>
-
-<div id="keys">
-
-<input type="button" class="btn13" value="DEL" onclick="presskey()">
-
-<input type="button" class="btn14" value="/" onclick="presskey('/')">
-
-<input type="button" class="btn15" value="*" onclick="presskey('*')">
-
-<input type="button" class="btn16" value="-" onclick="presskey('-')">
-
-<input type="button" class="btn17" value="+" onclick="presskey('+')">
-
-<input type="button" class="btn18" value="AC" onclick="clear()">
-
-<p>
-
-<input type="button" class="btn7" value="7" onclick="presskey('7')">
-
-<input type="button" class="btn8" value="8" onclick="presskey('8')">
-
-<input type="button" class="btn9" value="9" onclick="presskey('9')">
-
-
-</p>
-
-<p>
-
-<input type="button" class="btn4" value="4" onclick="presskey('4')">
-
-<input type="button" class="btn5" value="5" onclick="presskey('5')">
-
-<input type="button" class="btn6" value="6" onclick="presskey('6')">
-
-
-</p>
-
-<p>
-
-<input type="button" class="btn1" value="1" onclick="presskey('1')">
-
-<input type="button" class="btn2" value="2" onclick="presskey('2')">
-
-<input type="button" class="btn3" value="3" onclick="presskey('3')">
-
-
-</p>
-
-<p>
-
-<input type="button" class="btn10" value="." onclick="presskey('.')">
-
-<input type="button" class="btn0" value="0" onclick="presskey('0')">
-
-<input type="button" class="btn11" value="=" onclick="evaluate_exp()">
-
-
-</p>
-
-</div>
-
-
 </body>
+<script>
+var ct=0;
+var i=function(id)
+{
+return document.getElementById(id);
+}
+function evaluate_exp()
+{
+i("disp").value = i("ans").value;
+i("ans").value="";
+}
+function show(val)
+{
+i("ans").value=val;
+}
+function presskey(val)
+{
+i("disp").value+=val;
+if(val=='/' || val=='*' || val=='+' || val=='-' )
+ct++;
+else if(val=='C')
+ct = ct.substr(0 , ct.length-1)
+else if(ct!=0)
+show(eval(i("disp").value));
+}
+</script>
 
 </html>
