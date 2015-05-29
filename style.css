@@ -1,4 +1,4 @@
-#calc
+#calculator
 {
 	height:620px;
 	width:350px;
@@ -55,7 +55,7 @@
 	
 .operation
 {
-	height:58px;
+	height:70px;
 	width:65px;
 	background-color:#33CC33;
 	border:0px;
